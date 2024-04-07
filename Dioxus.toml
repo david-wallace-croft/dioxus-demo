@@ -1,77 +1,99 @@
 [application]
-
-# dioxus project name
-name = "dioxus-demo"
-
-# default platfrom
-# you can also use `dx serve/build --platform XXX` to use other platform
-# value: web | desktop
+asset_dir = "assets"
 default_platform = "web"
-
-# Web `build` & `serve` dist path
+name = "dioxus-demo"
 out_dir = "dist"
 
-# resource (static) file folder
-asset_dir = "public"
-
-# hot reload by default
-hot_reload = true
-
 [web.app]
-
-# HTML title tag content
-title = "Dioxus | An elegant GUI library for Rust"
+title = "Dioxus Demo"
 
 [web.watcher]
+reload_html = true
+watch_path = ["src", "assets"]
 
-index_on_404 = true
-
-watch_path = ["src", "examples"]
-
-# include `assets` in web platform
 [web.resource]
-
-# CSS style file
-style = []
-
-# Javascript code file
+style = ["/stylesheet.css"]
 script = []
 
 [web.resource.dev]
-
-# Javascript code file
-# serve: [dev-server] only
 script = []
+style = []
 
-[application.plugins]
 
-available = true
+# [application]
 
-required = []
+# # dioxus project name
+# name = "dioxus-demo"
 
-[bundler]
-# Bundle identifier
-identifier = "io.github.dioxus-demo"
+# # default platfrom
+# # you can also use `dx serve/build --platform XXX` to use other platform
+# # value: web | desktop
+# default_platform = "web"
 
-# Bundle publisher
-publisher = "dioxus-demo"
+# # Web `build` & `serve` dist path
+# out_dir = "dist"
 
-# Bundle icon
-icon = ["icons/icon.png"]
+# # resource (static) file folder
+# asset_dir = "public"
 
-# Bundle resources
-resources = ["public/*"]
+# # hot reload by default
+# hot_reload = true
 
-# Bundle copyright
-copyright = ""
+# [web.app]
 
-# Bundle category
-category = "Utility"
+# # HTML title tag content
+# title = "Dioxus | An elegant GUI library for Rust"
 
-# Bundle short description
-short_description = "An amazing dioxus application."
+# [web.watcher]
 
-# Bundle long description
-long_description = """
-An amazing dioxus application.
-"""
+# index_on_404 = true
+
+# watch_path = ["src", "examples"]
+
+# # include `assets` in web platform
+# [web.resource]
+
+# # CSS style file
+# style = []
+
+# # Javascript code file
+# script = []
+
+# [web.resource.dev]
+
+# # Javascript code file
+# # serve: [dev-server] only
+# script = []
+
+# [application.plugins]
+
+# available = true
+
+# required = []
+
+# [bundler]
+# # Bundle identifier
+# identifier = "io.github.dioxus-demo"
+
+# # Bundle publisher
+# publisher = "dioxus-demo"
+
+# # Bundle icon
+# icon = ["icons/icon.png"]
+
+# # Bundle resources
+# resources = ["public/*"]
+
+# # Bundle copyright
+# copyright = ""
+
+# # Bundle category
+# category = "Utility"
+
+# # Bundle short description
+# short_description = "An amazing dioxus application."
+
+# # Bundle long description
+# long_description = """
+# An amazing dioxus application.
+# """
