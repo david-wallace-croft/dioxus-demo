@@ -1,3 +1,12 @@
+use ::dioxus::prelude::*;
+
 fn main() {
-    println!("Hello, world!");
+  launch(App);
+}
+
+#[allow(non_snake_case)]
+fn App() -> Element {
+  rsx! {
+      "Hello, World!"
+  }
 }
