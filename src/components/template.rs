@@ -1,9 +1,11 @@
 use super::super::route::Route;
+use super::nav::Nav;
 use ::dioxus::prelude::*;
 
 #[allow(non_snake_case)]
-pub fn App() -> Element {
+pub fn Template() -> Element {
   rsx! {
-    Router::<Route> { }
+    Nav { }
+    Outlet::<Route> {}
   }
 }
