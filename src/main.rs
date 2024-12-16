@@ -1,26 +1,30 @@
-#[cfg(feature = "hydrate")]
-use ::dioxus_fullstack::prelude::*;
-#[cfg(feature = "hydrate")]
-use ::dioxus_fullstack::router::{FullstackRouterConfig, RouteWithCfg};
-#[cfg(feature = "hydrate")]
-use ::dioxus_web::Config;
-#[cfg(feature = "hydrate")]
-use dioxus_demo::route::Route;
+use ::dioxus::prelude::*;
+use ::dioxus_demo::route::Route;
 
-#[cfg(feature = "hydrate")]
-fn main() {
-  let root_properties: FullstackRouterConfig<Route> =
-    get_root_props_from_document()
-      .expect("Failed to get root properties from document");
-  let config = Config::default().hydrate(true);
-  ::dioxus_web::launch_with_props(
-    RouteWithCfg::<Route>,
-    root_properties,
-    config,
-  );
+#[server(endpoint = "static_routes")]
+async fn static_routes() -> Result<Vec<String>, ServerFnError> {
+  Ok(
+    Route::static_routes()
+      .into_iter()
+      .map(|route| route.to_string())
+      .collect::<Vec<_>>(),
+  )
 }
 
-#[cfg(not(feature = "hydrate"))]
 fn main() {
-  dioxus_demo::launch();
+  // dioxus_logger::init(Level::DEBUG).expect("Failed to initialize logger");
+
+  LaunchBuilder::new()
+    .with_cfg(server_only! {
+      ServeConfig::builder()
+        // turn on incremental site generation with the .incremental() method
+        .incremental(IncrementalRendererConfig::new())
+        .build()
+        .unwrap()
+    })
+    .launch(|| {
+      rsx! {
+        Router::<Route> {}
+      }
+    })
 }

@@ -5,7 +5,7 @@
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-url]: https://github.com/david-wallace-croft/dioxus-demo/blob/main/LICENSE.txt
 
-- Demonstration of Dioxus version 0.5
+- Demonstration of Dioxus version 0.6
 
 ## Usage
 

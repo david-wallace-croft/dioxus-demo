@@ -1,6 +1,6 @@
 use ::dioxus::prelude::*;
 
-#[allow(non_snake_case)]
+#[component]
 pub fn HighFive() -> Element {
   let mut count = use_signal(|| 0);
   rsx! {
