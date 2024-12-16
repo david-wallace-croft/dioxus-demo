@@ -9,8 +9,22 @@
 
 ## Usage
 
-- cd dioxus-demo/
-- cargo run
+- To run it in your localhost browser
+```
+cd dioxus-demo/
+cargo install dioxus-cli 
+dx serve
+```
+
+- To deploy using static site generation (SSG)
+```
+cd dioxus-demo/
+cargo install dioxus-cli 
+rm -rf static/
+rm -rf target/dx/
+dx build --release --ssg
+cp -r static/* target/dx/dioxus-demo/release/web/public/
+```
 
 ## History
 
