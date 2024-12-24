@@ -2,7 +2,7 @@
 authors = ["David Wallace Croft <david@CroftSoft.com>"]
 # Use the categories from https://crates.io/categories
 # categories = ["category-name"]
-# description = "project description"
+description = "Demonstration of Dioxus using Static Site Generation (SSG)"
 edition = "2021"
 homepage = "https://www.CroftSoft.com/"
 # https://doc.rust-lang.org/cargo/reference/manifest.html#the-keywords-field
