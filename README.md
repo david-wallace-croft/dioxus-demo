@@ -7,23 +7,43 @@
 
 - Demonstration of Dioxus version 0.6
 
+## Setup
+
+- Install the Dioxus Command Line Interface (CLI)
+```
+cargo install dioxus-cli
+```
+
 ## Usage
 
 - To run it in your localhost browser
 ```
 cd dioxus-demo/
-cargo install dioxus-cli 
+
 dx serve
 ```
 
 - To deploy using static site generation (SSG)
 ```
 cd dioxus-demo/
-cargo install dioxus-cli 
+
+rm -rf dist/
+
 rm -rf static/
+
 rm -rf target/dx/
+
 dx build --release --ssg
-cp -r static/* target/dx/dioxus-demo/release/web/public/
+
+mkdir dist/
+
+cp -r target/dx/dioxus-demo/release/web/public/* dist/
+
+cp -r static/* dist/
+
+cd dist/
+
+http-server -c-1 -o
 ```
 
 ## History
