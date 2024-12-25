@@ -1,5 +1,6 @@
 use ::dioxus::prelude::*;
 use ::dioxus_demo::route::Route;
+use ::dioxus_logger::tracing::Level;
 
 #[server(endpoint = "static_routes")]
 async fn static_routes() -> Result<Vec<String>, ServerFnError> {
@@ -12,7 +13,7 @@ async fn static_routes() -> Result<Vec<String>, ServerFnError> {
 }
 
 fn main() {
-  // dioxus_logger::init(Level::DEBUG).expect("Failed to initialize logger");
+  ::dioxus_logger::init(Level::DEBUG).expect("Failed to initialize logger");
 
   LaunchBuilder::new()
     .with_cfg(server_only! {

@@ -15,7 +15,15 @@ repository = "https://github.com/david-wallace-croft/dioxus-demo"
 version = "0.0.0-SNAPSHOT"
 
 [dependencies]
-dioxus = { version = "0.6.0", features = ["fullstack", "router"] }
+dioxus = { version = "0.6.1", features = ["fullstack", "router"] }
+dioxus-logger = "0.6.1"
+tracing = "0.1.41"
+
+[dev-dependencies]
+# TODO: Can we remove this when Dioxus v0.6.2 is released?
+dioxus-isrg = "0.6.1"
+# TODO: Can we remove this when Dioxus v0.6.2 is released?
+dioxus-ssr = "0.6.1"
 
 [features]
 default = ["web"]
@@ -23,12 +31,12 @@ web = ["dioxus/web"]
 
 [profile]
 
-[profile.wasm-dev]
+[profile.android-dev]
 inherits = "dev"
-opt-level = 1
 
 [profile.server-dev]
 inherits = "dev"
 
-[profile.android-dev]
+[profile.wasm-dev]
 inherits = "dev"
+opt-level = 1
