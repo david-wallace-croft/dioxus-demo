@@ -1,6 +1,7 @@
 use ::dioxus::prelude::*;
 use ::tracing::debug;
 
+#[allow(non_snake_case)]
 #[component]
 pub fn HighFive() -> Element {
   let mut count: Signal<i32> = use_signal(|| 0);

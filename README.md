@@ -20,7 +20,7 @@ cargo install dioxus-cli
 ```
 cd dioxus-demo/
 
-dx serve
+dx serve --open
 ```
 
 - To deploy using static site generation (SSG)
