@@ -1,4 +1,12 @@
+a {
+  color: white;
+}
+
 body {
   background-color: black;
   color: white;
+}
+
+button {
+  margin: 1rem;
 }

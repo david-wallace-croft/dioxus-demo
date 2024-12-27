@@ -6,6 +6,7 @@ use ::dioxus::prelude::*;
 pub fn Colophon() -> Element {
   rsx! {
     h1 { "Colophon Page" }
+
     p {
       "This website was created using the Rust library ",
       a {
@@ -15,6 +16,17 @@ pub fn Colophon() -> Element {
       },
       "."
     }
+
+    p {
+      "This open source repository for this website is hosted on GitHub:",
+      br { },
+      a {
+        href: "https://github.com/david-wallace-croft/dioxus-demo",
+        target: "_blank",
+      "https://github.com/david-wallace-croft/dioxus-demo",
+      }
+    }
+
     HighFive { }
   }
 }
