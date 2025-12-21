@@ -2,17 +2,13 @@
 
 rm -rf dist/
 
-rm -rf static/
+rm -rf target/
 
-rm -rf target/dx/
-
-dx build --release --ssg
+dx build --release --ssg --web
 
 mkdir dist/
 
 cp -r target/dx/dioxus-demo/release/web/public/* dist/
-
-cp -r static/* dist/
 
 cd dist/
 
