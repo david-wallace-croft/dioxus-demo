@@ -2,7 +2,11 @@
 
 rm -rf dist/
 
+# Static site generation (SSG) fails if target/ is not clean
 rm -rf target/
+
+# It might be just this that is required instead of all of target/
+# rm -rf target/server-release/
 
 dx build --release --ssg --web
 

@@ -15,7 +15,7 @@ async fn static_routes() -> Result<Vec<String>, ServerFnError> {
 
 fn init_logger() {
   use ::dioxus::logger;
-  use ::tracing::{info, Level};
+  use ::tracing::{Level, info};
 
   // WARNING: Setting level to TRACE might cause a problem with pre-rendering
   logger::init(Level::INFO).expect("Failed to initialize logger");
